@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bate Papo Uol</title>
     <link rel="stylesheet" href="reset.css" />    
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +14,40 @@
     <link rel="stylesheet"  href="styles.css"/>
 </head>
 <body>
-    
+    <div class="fundo-menu fundo-escondido" onclick="abrirMenu()"></div>
+    <header>
+        <img src="assets/logouol.jpg">
+        <ion-icon name="people-sharp" onclick="abrirMenu()"></ion-icon>
+    </header>
+    <main>
+
+    </main>
+    <footer>
+        <div class="entrada-mensagem">
+            <input type="text" placeholder="Escreva aqui ..." class="input-mensagem">
+            <span class="enviando">Enviado para todos</span>
+        </div>
+        <button onclick="enviarMensagem()" data-identifier="send-message">
+            <ion-icon name="paper-plane-outline"></ion-icon>
+        </button>
+    </footer>
+    <aside class="menu escondido">
+        <p class="titulo-menu">Escolha um contato para enviar mensagem</p> 
+        <ul class="contatos">
+
+        </ul>
+        <p class="titulo-menu">Escolha a visibilidade</p>
+        <ul class="visibilidade">
+            <li class="visibilidade-publico selecionado"  onclick="selecionarVisibilidade(this, 'message')">
+                <ion-icon name="lock-open"></ion-icon>Público<ion-icon class="check" name="checkmark-outline">
+                </ion-icon>                
+            </li>
+            <li class="visibilidade-privado" onclick="selecionarVisibilidade(this, 'private_message')">
+                <ion-icon name="lock-closed"></ion-icon>Reservadamente<ion-icon class="check" name="checkmark-outline">
+                </ion-icon>
+            </li>
+        </ul>
+    </aside>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="scripts.js"></script>
